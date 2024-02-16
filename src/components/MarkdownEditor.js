@@ -1,7 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import "./components.css";
 import axios from "axios";
 function MarkdownEditor({ value, onChange, setHTML }) {
+  function debounce(func, timeout = 300) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, timeout);
+    };
+  }
   function handleChange(event) {
     onChange(event.target.value);
     convertMarkdown(event.target.value);
@@ -19,16 +28,17 @@ function MarkdownEditor({ value, onChange, setHTML }) {
   }
 
   return (
-    // <div >
-    <textarea
-      className="markdown-editor"
-      //   rows={40}
-      //   cols={50}
-      value={value}
-      onChange={handleChange}
-      placeholder="Write your Markdown here..."
-    />
-    // </div>
+    <div>
+      <p>
+        Enter markdown here
+        </p>
+      <textarea
+        className="markdown-editor"
+        value={value}
+        onChange={handleChange}
+        placeholder="Write your Markdown here..."
+      />
+    </div>
   );
 }
 
