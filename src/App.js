@@ -17,9 +17,16 @@ function App() {
         />
         <HTMLPreview html={html} />
       </div>
-      <div className="preview-container">
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </div>
+      {html.length > 0 ? (
+        <>
+          <p className="header">Live component preview</p>
+          <div className="preview-container">
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

@@ -13,3 +13,11 @@
   width: 43vw;
   height: 60vh;
 }
+.header {
+  color: #fff;
+  font-family: Inter;
+  font-size: 2.89vw;
+  font-style: normal;
+  font-weight: 600;
+  padding-left: 10px;
+}

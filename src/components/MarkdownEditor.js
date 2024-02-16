@@ -29,7 +29,7 @@ function MarkdownEditor({ value, onChange, setHTML }) {
 
   return (
     <div>
-      <p>
+      <p className="header">
         Enter markdown here
         </p>
       <textarea
