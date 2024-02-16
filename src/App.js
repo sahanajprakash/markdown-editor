@@ -6,12 +6,12 @@ import { marked } from "marked";
 
 function App() {
   const [markdown, setMarkdown] = useState("");
-  const html = marked.parse(markdown);
-
+  // const html = marked.parse(markdown);
+const [html, setHTML]= useState("");
   return (
     <div className="App">
       <div className="editor-container">
-        <MarkdownEditor value={markdown} onChange={setMarkdown} />
+        <MarkdownEditor value={markdown} onChange={setMarkdown} setHTML={setHTML} />
         <HTMLPreview html={html} />
       </div>
       <div className="preview-container">
