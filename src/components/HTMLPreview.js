@@ -1,15 +1,19 @@
-import React from 'react';
-import {marked} from 'marked';
+import React from "react";
+import { CopyBlock, a11yDark } from "react-code-blocks";
 
-function LivePreview({ markdown }) {
-  const html = marked.parse(markdown);
-console.log(html);
+function HTMLPreview({ html }) {
   return (
-    <div className="live-preview"  >
-        {html}
-        <div dangerouslySetInnerHTML={{ __html: html }}/>
+    <div className="html-preview">
+      <CopyBlock
+        text={html}
+        language={"html"}
+        showLineNumbers={true}
+        wrapLines={true}
+        wrapLongLines
+        theme={a11yDark}
+      />
     </div>
   );
 }
 
-export default LivePreview;
+export default HTMLPreview;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './components.css'
 function MarkdownEditor({value, onChange}) {
 
   const handleChange = (event) => {
@@ -8,15 +8,16 @@ function MarkdownEditor({value, onChange}) {
   };
 
   return (
-    <div className="markdown-editor">
+    // <div >
       <textarea
-      rows={50}
-      cols={50}
+      className="markdown-editor"
+    //   rows={40}
+    //   cols={50}
         value={value}
         onChange={handleChange}
         placeholder="Write your Markdown here..."
       />
-    </div>
+    // </div>
   );
 }
 
